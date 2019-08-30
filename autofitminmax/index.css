@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, 100px);
+}
+
+/*
+MAKE AMOUNT OF COLUMNS VARY BY WIDTH OF CONTAINER
+1fr doesn't work well with auto-fit, basically both just filling ALL space, use minmax instead
+THIS makes it fit all the way evenly grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+regardless of whether column adds up to 100px
+
+Let’s say you want a column to be between 200px and 500px and then a 1fr column: 
+.container {
+    display: grid;
+    grid-template-columns: minmax(200px, 500px) 1fr;
+}
+*/

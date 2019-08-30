@@ -1,33 +1,37 @@
 .container {
+    height: 100%;
     display: grid;
     grid-gap: 3px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 40px 200px 40px;
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        "m h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "m f f f f f f f f f f f"
 }
 
 .header {
-    grid-column: 2 / -1;
+    grid-area: h;
 }
 
-/*
-changed from grid-column: 1 / -1; because need to open up space in first column for sidebar
+/* going to use grid-area for header, means you have to add grid-template-area to container
+Must add a string for EACH row
+number of variables must match number of columns 
+visual rep of how the grid should look
+REMOVE the grid-column commands after using grid-template-areas
+. gives you a BLANK cell
+MUST be rectangular shaped
 */
 
+
 .menu {
-    grid-row: 1 / 4;
+    grid-area: m;
 }
 
-/* spans from first row line to the 2rd row line */
-
 .content {
-    grid-column: 2 / -1;
+    grid-area: c;
 }
 
 .footer {
-    grid-column: 2 / -1;
+    grid-area: f;
 }
-
-/*
-grid-column: 1 / 3;  can also be written grid-column: 1 / span 2;
-also can be grid-column: 1/ -1
-*/
