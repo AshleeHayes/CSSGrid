@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 75px;
+    grid-auto-flow: dense;
+
+    .horizontal {
+        grid-column: span 2;
+    }
+
+    .vertical {
+        grid-row: span 2;
+    }
+
+    .big {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    /*
+want to replace the 1 in grid-column with auto so it starts on whatever column they were initially given
+or to simplify- just put span 2
+Blank spots: grid starts in upper left corner then it lays out to the right
+- if it can't fit (says 1 grid cell avaibable) but over sized image. then looks at next cell- its taken but after that it has space so fits in item. thats how spaces get left.
+grid-auto-flow fixes that
+*/
