@@ -1,0 +1,23 @@
+.container {
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 100px 100px;
+}
+
+.container2 {
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: 100px 100px;
+}
+
+
+/*
+Translate:    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+means repeat with af as many columns as can fit into the grid that fits these restraints, minimum of 100px max of 1fr, amount of columns grow with size of the grid
+Auto FIT- has put space there even though there is no element. It creates new columns
+Auto FILL has made each element stretch or shrink to fit the line. It collapses columns so it can stretch
+*/
